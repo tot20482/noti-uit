@@ -1,10 +1,10 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { COLORS, FONT, icons } from "../../../constants";
-import Tab from "./Tab";
-import { headerTab } from "../../../mocks/notification";
-import Filter from "./Filter";
 import { useState } from "react";
 import Search from "./Search";
+import { headerTab } from "../../../mocks/job";
+import Filter from "./Filter";
+import { COLORS, FONT, icons } from "../../../constants";
+import JobTab from "./JobTab";
 
 const Header = ({ isSelected, setIsSelected }) => {
   const [isFilterVisible, setFilterVisible] = useState(false);
@@ -40,7 +40,7 @@ const Header = ({ isSelected, setIsSelected }) => {
             <Text
               style={{ fontSize: 24, fontFamily: FONT.bold, color: "#fff" }}
             >
-              Thông báo
+              Cơ hội việc làm
             </Text>
           </>
         )}
@@ -62,7 +62,7 @@ const Header = ({ isSelected, setIsSelected }) => {
         }}
       >
         {headerTab.map((item, index) => (
-          <Tab
+          <JobTab
             key={index}
             type={item.type}
             title={item.title}

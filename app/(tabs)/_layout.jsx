@@ -47,7 +47,7 @@ export default function TabLayout() {
             title: "",
             headerShown: false,
             tabBarIcon: ({ icon, focused }) => (
-              <TabIcon icon={icons.calendar} focused={focused} />
+              <TabIcon icon={icons.job} focused={focused} />
             ),
           }}
         />
@@ -87,7 +87,7 @@ export default function TabLayout() {
             title: "",
             headerShown: false,
             tabBarIcon: ({ icon, focused }) => (
-              <TabIcon icon={icons.calendar} focused={focused} />
+              <TabIcon icon={icons.person} focused={focused} />
             ),
           }}
         />

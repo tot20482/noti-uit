@@ -7,6 +7,8 @@ import search from "./../assets/icons/search.png";
 import searched from "./../assets/icons/searched.png";
 import filter from "./../assets/icons/filter.png";
 import down from "./../assets/icons/down.png";
+import job from "./../assets/icons/job.png";
+import right from "./../assets/icons/right.png";
 
 export default {
   eye,
@@ -18,4 +20,6 @@ export default {
   filter,
   down,
   searched,
+  job,
+  right,
 };

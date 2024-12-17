@@ -18,7 +18,7 @@ const NotiContent = ({ title, description, createdAt }) => {
       <Text
         style={{
           fontSize: 16,
-          fontFamily: FONT.semibold,
+          fontFamily: FONT.bold,
           color: COLORS.primary,
         }}
       >

@@ -6,8 +6,9 @@ const SpinnerLoader = () => {
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
-      router.push("/(auth)/signIn");
-    }, 3000);
+      // router.push("/(auth)/signIn");
+      router.push("/(tabs)/notification");
+    }, 1000);
   }, []);
   return (
     <View>
