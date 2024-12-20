@@ -1,35 +1,12 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, Image, TouchableOpacity, Modal } from "react-native";
 import { COLORS, FONT, icons, images } from "./../../constants";
-
-const btnTab = [
-  {
-    type: "Hồ sơ cá nhân",
-    title: "Hồ sơ cá nhân",
-  },
-  {
-    type: "Tin tuyển dụng đã lưu",
-    title: "Tin tuyển dụng đã lưu",
-  },
-  {
-    type: "Thông báo đã lưu",
-    title: "Thông báo đã lưu",
-  },
-  {
-    type: "Trung tâm hỗ trợ",
-    title: "Trung tâm hỗ trợ",
-  },
-  {
-    type: "Liên hệ chúng tôi",
-    title: "Liên hệ chúng tôi",
-  },
-  {
-    type: "Cài đặt",
-    title: "Cài đặt",
-  },
-];
-
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import DeleteJob from "../../components/profile/JobFair/DeleteJob";
+import SignOut from "../../components/profile/signOut/SignOut";
 const Profile = () => {
+  const [isSignOut, setIsSignOut] = useState(false);
+  const router = useRouter();
   return (
     <View>
       <View
@@ -71,38 +48,224 @@ const Profile = () => {
           marginTop: 30,
         }}
       >
-        {btnTab.map((item, index) => (
-          <TouchableOpacity
-            key={index}
+        <TouchableOpacity
+          onPress={() => router.push("(profileDetail)/userProfile")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
             style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              height: 50,
-              width: "80%",
-              padding: 10,
-              backgroundColor: "#fff",
-              borderRadius: 15,
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
             }}
           >
-            <Text
-              style={{
-                fontFamily: FONT.semibold,
-                fontSize: 16,
-                color: COLORS.primary,
-              }}
-            >
-              {item.title}
-            </Text>
-            <Image
-              source={icons.right}
-              resizeMode="contain"
-              style={{ width: 24, height: 24 }}
-            />
-          </TouchableOpacity>
-        ))}
+            Hồ sơ cá nhân
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => router.push("(profileDetail)/jobFair")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Tin tuyển dụng đã lưu
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => router.push("(profileDetail)/savedNotification")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Thông báo đã lưu
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => router.push("(profileDetail)/helpCenter")}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Trung tâm hỗ trợ
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(profileDetail)/contact");
+          }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Liên hệ chúng tôi
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            router.push("/(profileDetail)/setting");
+          }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Cài đặt
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            setIsSignOut(true);
+          }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            height: 50,
+            width: "80%",
+            padding: 10,
+            backgroundColor: "#fff",
+            borderRadius: 15,
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: FONT.semibold,
+              fontSize: 16,
+              color: COLORS.primary,
+            }}
+          >
+            Đăng xuất
+          </Text>
+          <Image
+            source={icons.right}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
       </View>
+      <Modal
+        visible={isSignOut}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setIsSignOut(false)}
+      >
+        <SignOut setIsSignOut={setIsSignOut} />
+      </Modal>
     </View>
   );
 };

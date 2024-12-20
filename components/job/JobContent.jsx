@@ -2,11 +2,21 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 import { COLORS, FONT } from "../../constants";
+import { useRouter } from "expo-router";
 
-const JobContent = ({ title, type, address, createdAt, imgUrl }) => {
+const JobContent = ({
+  title,
+  type,
+  address,
+  createdAt,
+  imgUrl,
+  routerPath,
+}) => {
+  const router = useRouter();
   return (
     <>
       <TouchableOpacity
+        onPress={() => router.push(routerPath)}
         style={{
           width: "95%",
           backgroundColor: "#fff",

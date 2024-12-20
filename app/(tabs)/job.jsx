@@ -57,6 +57,7 @@ const Job = () => {
             address={item.address}
             createdAt={item.createdAt}
             imgUrl={item.imgUrl}
+            routerPath={item.routerPath}
           />
         ))}
       </View>
