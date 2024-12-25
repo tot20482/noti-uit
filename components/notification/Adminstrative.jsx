@@ -3,11 +3,11 @@ import React from "react";
 import { Link } from "expo-router";
 import { COLORS, FONT } from "../../constants";
 
-const NotiContent = ({ title, description, createdAt }) => {
+const Adminstrative = ({ title, description, createdAt }) => {
   return (
     <View
       style={{
-        width: "85%",
+        width: "90%",
         backgroundColor: "#fff",
         flexDirection: "column",
         gap: 4,
@@ -48,4 +48,4 @@ const NotiContent = ({ title, description, createdAt }) => {
   );
 };
 
-export default NotiContent;
+export default Adminstrative;

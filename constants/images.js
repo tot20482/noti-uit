@@ -7,6 +7,8 @@ import study1 from "./../assets/images/study1.png";
 import study2 from "./../assets/images/study2.png";
 import study3 from "./../assets/images/study3.png";
 import research1 from "./../assets/images/research1.png";
+import csacPink from "./../assets/images/csacPink.png";
+import csacBlue from "./../assets/images/csacBlue.png";
 
 export default {
   logo,
@@ -18,4 +20,6 @@ export default {
   study2,
   study3,
   research1,
+  csacBlue,
+  csacPink,
 };
