@@ -46,7 +46,7 @@ const Search = ({ setIsSearched }) => {
           }}
         />
       </TouchableOpacity>
-      <TextInput placeholder="Tìm kiếm công việc" style={{ width: "70%" }} />
+      <TextInput placeholder="Tìm kiếm lịch trình" style={{ width: "70%" }} />
     </View>
   );
 };

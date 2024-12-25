@@ -23,6 +23,10 @@ import deleteIcon from "./../assets/icons/deleteIcon.png";
 import phone from "./../assets/icons/phone.png";
 import copy from "./../assets/icons/copy.png";
 import tick from "./../assets/icons/tick.png";
+import library from "./../assets/icons/library.png";
+import check from "./../assets/icons/check.png";
+import checked from "./../assets/icons/checked.png";
+import clock from "./../assets/icons/clock.png";
 
 export default {
   eye,
@@ -50,4 +54,8 @@ export default {
   phone,
   copy,
   tick,
+  library,
+  check,
+  checked,
+  clock,
 };

@@ -57,7 +57,7 @@ export default function TabLayout() {
             title: "",
             headerShown: false,
             tabBarIcon: ({ icon, focused }) => (
-              <TabIcon icon={icons.person} focused={focused} />
+              <TabIcon icon={icons.calendar} focused={focused} />
             ),
           }}
         />
@@ -72,12 +72,12 @@ export default function TabLayout() {
           }}
         />
         <Tabs.Screen
-          name="forum"
+          name="library"
           options={{
             title: "",
             headerShown: false,
             tabBarIcon: ({ icon, focused }) => (
-              <TabIcon icon={icons.person} focused={focused} />
+              <TabIcon icon={icons.library} focused={focused} />
             ),
           }}
         />

@@ -1,25 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
-import Header from "../../components/calendar/Header/Header";
-import CalendarContent from "../../components/calendar/CalendarContent";
-import { MockAll } from "@/mocks/calendar";
+import Header from "../../components/library/Header/Header";
+import { MockResearch, MockStudy } from "../../mocks/library";
+import LibraryContent from "../../components/library/LibraryContent";
 
-const Calendar = () => {
-  const [isSelected, setIsSelected] = useState("Tất cả");
+const Library = () => {
+  const [isSelected, setIsSelected] = useState("Học tập");
 
   let sourceData = [];
   switch (isSelected) {
-    case "Tất cả":
-      sourceData = MockAll;
+    case "Học tập":
+      sourceData = MockStudy;
       break;
-    case "Lịch học":
-      // sourceData = MockResearch;
-      break;
-    case "Deadline":
-      // sourceData = MockResearch;
-      break;
-    case "Khác":
-      // sourceData = MockResearch;
+    case "Nghiên cứu":
+      sourceData = MockResearch;
       break;
     default:
       break;
@@ -42,14 +36,22 @@ const Calendar = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            gap: 20,
             marginBottom: 30,
           }}
         >
-          {isSelected === "Tất cả" && <CalendarContent sourceData={MockAll} />}
+          {renderData.map((item) => (
+            <LibraryContent
+              key={item.id}
+              title={item.title}
+              document1={item.document1}
+              routerPath={item.routerPath}
+            />
+          ))}
         </View>
       </ScrollView>
     </View>
   );
 };
 
-export default Calendar;
+export default Library;

@@ -3,5 +3,19 @@ import company1 from "./../assets/images/company1.png";
 import company2 from "./../assets/images/company2.png";
 import company3 from "./../assets/images/company3.png";
 import Avatar from "./../assets/images/Avatar.png";
+import study1 from "./../assets/images/study1.png";
+import study2 from "./../assets/images/study2.png";
+import study3 from "./../assets/images/study3.png";
+import research1 from "./../assets/images/research1.png";
 
-export default { logo, company1, company2, company3, Avatar };
+export default {
+  logo,
+  company1,
+  company2,
+  company3,
+  Avatar,
+  study1,
+  study2,
+  study3,
+  research1,
+};
