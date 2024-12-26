@@ -8,6 +8,7 @@ export const MockOutline = [
     subject: "CS256",
     publishYear: "2024",
     imgUrl: images.study1,
+    routerPath: "(library)/(libraryDetail)/Study/outline1",
   },
   {
     id: 2,
@@ -62,5 +63,35 @@ export const MockBook = [
     Pulisher: "Đại học Quốc gia TP.HCM",
     publishYear: "2022",
     imgUrl: images.study3,
+  },
+];
+
+export const MockOutline1 = [
+  {
+    imgUrl: images.study1,
+    title: "Phát triển ứng dụng đa phương tiện trên thiết bị di động",
+    year: "2024",
+    topic: "Khoa học máy tính",
+    object: "Sinh viên trên địa bàn TP.HCM",
+    uri: [
+      "https://developer.mozilla.org/en-US",
+      "https://nodejs.org/en/docs",
+      "https://reactnative.dev/docs/getting-started#how-to-use-these-docs",
+      "https://ir.vnulib.edu.vn/handle/VNUHCM/34022",
+    ],
+    relative: [
+      {
+        title: "Mozilla Developer Networks website",
+        link: "https://developer.mozilla.org/en-US",
+      },
+      {
+        title: "NodeJs Documentation",
+        link: "https://nodejs.org/en/docs",
+      },
+      {
+        title: "React Native documentation",
+        link: "https://reactnative.dev/docs/getting-started#how-to-use-these-docs",
+      },
+    ],
   },
 ];

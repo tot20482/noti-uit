@@ -1,11 +1,22 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { COLORS, FONT } from "../../../constants";
 
-const OutlineContent = ({ imgUrl, title, topic, subject, publishYear }) => {
+const OutlineContent = ({
+  imgUrl,
+  title,
+  topic,
+  subject,
+  publishYear,
+  routerPath,
+}) => {
+  const router = useRouter();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => {
+        router.push(routerPath);
+      }}
       style={{
         minHeight: 115,
         width: "90%",
@@ -65,7 +76,7 @@ const OutlineContent = ({ imgUrl, title, topic, subject, publishYear }) => {
       >
         Chi tiết
       </Link>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -27,6 +27,7 @@ import library from "./../assets/icons/library.png";
 import check from "./../assets/icons/check.png";
 import checked from "./../assets/icons/checked.png";
 import clock from "./../assets/icons/clock.png";
+import download from "./../assets/icons/download.png";
 
 export default {
   eye,
@@ -58,4 +59,5 @@ export default {
   check,
   checked,
   clock,
+  download,
 };
