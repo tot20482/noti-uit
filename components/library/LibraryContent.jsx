@@ -63,6 +63,7 @@ const LibraryContent = ({ title, routerPath, document1 }) => {
             Keywords={item.Keywords}
             Pushlisher={item.Pushlisher}
             publishYear={item.publishYear}
+            routerPath={item.routerPath}
           />
         ))}
       </View>

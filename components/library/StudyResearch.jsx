@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, FONT } from "../../constants";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const StudyResearch = ({
   imgUrl,
@@ -9,7 +9,9 @@ const StudyResearch = ({
   Keywords,
   Pushlisher,
   publishYear,
+  routerPath,
 }) => {
+  const router = useRouter();
   return (
     <TouchableOpacity
       style={{
@@ -18,6 +20,9 @@ const StudyResearch = ({
         backgroundColor: "#fff",
         padding: 15,
         borderRadius: 15,
+      }}
+      onPress={() => {
+        router.push(routerPath);
       }}
     >
       <View

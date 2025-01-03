@@ -13,6 +13,8 @@ import seminar from "./../assets/images/seminar.jpg";
 import seeyou from "./../assets/images/seeyou.jpg";
 import thefool from "./../assets/images/thefool.jpg";
 import thefool1 from "./../assets/images/thefool1.png";
+import vng from "./../assets/images/vng.png";
+import citynow from "./../assets/images/citynow.png";
 
 export default {
   logo,
@@ -30,4 +32,6 @@ export default {
   seeyou,
   thefool,
   thefool1,
+  vng,
+  citynow,
 };

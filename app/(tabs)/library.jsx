@@ -28,7 +28,7 @@ const Library = () => {
   return (
     <View>
       <Header isSelected={isSelected} setIsSelected={setIsSelected} />
-      <ScrollView style={{ marginBottom: 20 }}>
+      <ScrollView>
         <View
           style={{
             padding: 20,
@@ -37,7 +37,8 @@ const Library = () => {
             justifyContent: "center",
             alignItems: "center",
             gap: 20,
-            marginBottom: 30,
+            height: 700,
+            marginBottom: 150,
           }}
         >
           {renderData.map((item) => (

@@ -4,7 +4,7 @@ import { COLORS, FONT, icons } from "../../../../constants";
 import { useRouter } from "expo-router";
 import { MockOutline1 } from "../../../../mocks/library/Study";
 
-const Outline1Content = () => {
+const DetailStudy = ({ mockData }) => {
   const router = useRouter();
   return (
     <View>
@@ -56,7 +56,7 @@ const Outline1Content = () => {
           alignItems: "center",
         }}
       >
-        {MockOutline1.map((item, index) => (
+        {mockData.map((item, index) => (
           <View
             key={index}
             style={{
@@ -93,6 +93,30 @@ const Outline1Content = () => {
                 >
                   {item.title}
                 </Text>
+                <View
+                  style={{ display: "flex", flexDirection: "row", gap: 20 }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: FONT.regular,
+                      fontSize: 14,
+                      marginTop: 6,
+                    }}
+                  >
+                    <Text style={{ fontFamily: FONT.bold }}>Size: </Text>
+                    {item.size}
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: FONT.regular,
+                      fontSize: 14,
+                      marginTop: 6,
+                    }}
+                  >
+                    <Text style={{ fontFamily: FONT.bold }}>Format: </Text>
+                    {item.format}
+                  </Text>
+                </View>
                 <Text
                   style={{
                     fontFamily: FONT.regular,
@@ -121,8 +145,8 @@ const Outline1Content = () => {
                   marginTop: 6,
                 }}
               >
-                <Text style={{ fontFamily: FONT.bold }}>Chủ đề: </Text>
-                {item.topic}
+                <Text style={{ fontFamily: FONT.bold }}>Keywords: </Text>
+                {item.keywords}
               </Text>
               <Text
                 style={{
@@ -131,8 +155,8 @@ const Outline1Content = () => {
                   marginTop: 6,
                 }}
               >
-                <Text style={{ fontFamily: FONT.bold }}>Đối tượng: </Text>
-                {item.object}
+                <Text style={{ fontFamily: FONT.bold }}>Pushlisher: </Text>
+                {item.publisher}
               </Text>
               <View>
                 <Text
@@ -168,26 +192,56 @@ const Outline1Content = () => {
                 >
                   Relative references:
                 </Text>
-                {item.relative.map((item, index) => (
-                  <View key={index} style={{ marginLeft: 8 }}>
-                    <Text
-                      style={{
-                        fontFamily: FONT.regular,
-                        fontSize: 14,
-                        marginBottom: 8,
-                      }}
-                    >
-                      {index + 1}.{" "}
-                      <Text style={{ fontFamily: FONT.bold }}>
-                        {item.title}
-                        {":"}
-                        <Text style={{ fontFamily: FONT.regular }}>
-                          {item.link}
+                {item.relative.length === 0 ? (
+                  ""
+                ) : (
+                  <>
+                    {item.relative.map((item, index) => (
+                      <View key={index} style={{ marginLeft: 8 }}>
+                        <Text
+                          style={{
+                            fontFamily: FONT.regular,
+                            fontSize: 14,
+                            marginBottom: 8,
+                          }}
+                        >
+                          {index + 1}.{" "}
+                          <Text style={{ fontFamily: FONT.bold }}>
+                            {item.title}
+                            {":"}
+                            <Text style={{ fontFamily: FONT.regular }}>
+                              {item.link}
+                            </Text>
+                          </Text>
                         </Text>
+                      </View>
+                    ))}
+                  </>
+                )}
+                <View>
+                  <Text
+                    style={{
+                      fontFamily: FONT.bold,
+                      fontSize: 14,
+                      marginBottom: 8,
+                    }}
+                  >
+                    Authors:
+                  </Text>
+                  <View style={{ marginLeft: 8, display: "flex", gap: 6 }}>
+                    {item.authors.map((item, index) => (
+                      <Text
+                        key={index}
+                        style={{
+                          fontFamily: FONT.regular,
+                          fontSize: 14,
+                        }}
+                      >
+                        {index + 1}. {item}
                       </Text>
-                    </Text>
+                    ))}
                   </View>
-                ))}
+                </View>
               </View>
             </View>
           </View>
@@ -265,4 +319,4 @@ const Outline1Content = () => {
   );
 };
 
-export default Outline1Content;
+export default DetailStudy;

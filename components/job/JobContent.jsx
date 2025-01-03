@@ -21,7 +21,10 @@ const JobContent = ({
           width: "95%",
           backgroundColor: "#fff",
           borderRadius: 10,
-          padding: 15,
+          paddingLeft: 5,
+          paddingRight: 10,
+          paddingTop: 15,
+          paddingBottom: 15,
         }}
       >
         <View
@@ -35,10 +38,10 @@ const JobContent = ({
             gap: 10,
           }}
         >
-          <View style={{ width: "25%" }}>
+          <View style={{ width: "25%", marginRight: 8 }}>
             <Image
               source={imgUrl}
-              style={{ width: 60, height: 60, marginLeft: 15, marginTop: 15 }}
+              style={{ width: 75, height: 75, marginLeft: 15, marginTop: 15 }}
               resizeMode="contain"
             />
           </View>

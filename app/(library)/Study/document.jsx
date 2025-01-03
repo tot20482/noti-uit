@@ -29,6 +29,7 @@ const Document = () => {
             topic={item.topic}
             subject={item.subject}
             publishYear={item.publishYear}
+            routerPath={item.routerPath}
           />
         ))}
       </View>

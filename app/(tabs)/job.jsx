@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import Header from "../../components/job/Header/Header";
 import JobContent from "../../components/job/JobContent";
 import {
@@ -39,28 +39,35 @@ const Job = () => {
   return (
     <View>
       <Header isSelected={isSelected} setIsSelected={setIsSelected} />
-      <View
+      <ScrollView
         style={{
           padding: 20,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 20,
+          height: 710,
         }}
       >
-        {renderData.map((item) => (
-          <JobContent
-            key={item.id}
-            title={item.title}
-            type={item.type}
-            address={item.address}
-            createdAt={item.createdAt}
-            imgUrl={item.imgUrl}
-            routerPath={item.routerPath}
-          />
-        ))}
-      </View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 20,
+            marginBottom: 150,
+          }}
+        >
+          {renderData.map((item) => (
+            <JobContent
+              key={item.id}
+              title={item.title}
+              type={item.type}
+              address={item.address}
+              createdAt={item.createdAt}
+              imgUrl={item.imgUrl}
+              routerPath={item.routerPath}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 };

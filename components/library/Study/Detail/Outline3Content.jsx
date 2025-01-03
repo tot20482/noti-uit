@@ -2,9 +2,9 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { COLORS, FONT, icons } from "../../../../constants";
 import { useRouter } from "expo-router";
-import { MockOutline1 } from "../../../../mocks/library/Study";
+import { MockOutline1, MockOutline3 } from "../../../../mocks/library/Study";
 
-const Outline1Content = () => {
+const OutlineContent3 = () => {
   const router = useRouter();
   return (
     <View>
@@ -56,13 +56,13 @@ const Outline1Content = () => {
           alignItems: "center",
         }}
       >
-        {MockOutline1.map((item, index) => (
+        {MockOutline3.map((item, index) => (
           <View
             key={index}
             style={{
               backgroundColor: "#fff",
               borderRadius: 15,
-              padding: 15,
+              padding: 10,
               paddingBottom: 40,
               width: "95%",
             }}
@@ -265,4 +265,4 @@ const Outline1Content = () => {
   );
 };
 
-export default Outline1Content;
+export default OutlineContent3;

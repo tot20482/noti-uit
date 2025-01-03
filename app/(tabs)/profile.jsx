@@ -78,7 +78,7 @@ const Profile = () => {
           />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => router.push("(profileDetail)/jobFair")}
+          onPress={() => router.push("(profileDetail)/Saved")}
           style={{
             display: "flex",
             flexDirection: "row",
@@ -98,36 +98,7 @@ const Profile = () => {
               color: COLORS.primary,
             }}
           >
-            Tin tuyển dụng đã lưu
-          </Text>
-          <Image
-            source={icons.right}
-            resizeMode="contain"
-            style={{ width: 24, height: 24 }}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => router.push("(profileDetail)/savedNotification")}
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: 50,
-            width: "80%",
-            padding: 10,
-            backgroundColor: "#fff",
-            borderRadius: 15,
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: FONT.semibold,
-              fontSize: 16,
-              color: COLORS.primary,
-            }}
-          >
-            Thông báo đã lưu
+            Đã lưu
           </Text>
           <Image
             source={icons.right}

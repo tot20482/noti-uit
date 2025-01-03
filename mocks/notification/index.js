@@ -50,8 +50,8 @@ export const mockAdministrative = [
     title: "Thông báo gia hạn học phí HK2 năm học 2024-2025",
     time: "từ ngày 02/01/2025 đến hết ngày 06/01/2025.",
     address: "",
-    desc: "Form đăng ký của SV: ",
-    link: " https://student.uit.edu.vn/sinhvien/dkgiahanhp",
+    desc: "Form đăng ký của SV",
+    link: "https://student.uit.edu.vn/sinhvien/dkgiahanhp",
     createdAt: "T5, 02/01/2025 - 14:37",
   },
 ];
