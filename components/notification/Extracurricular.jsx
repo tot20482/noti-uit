@@ -6,14 +6,10 @@ import { COLORS, FONT, images } from "../../constants";
 const Extracurricular = ({
   title,
   image1,
-  image2,
   address,
   time,
   createdAt,
   routerPath,
-  object,
-  fields,
-  steps,
 }) => {
   const router = useRouter();
   return (
@@ -21,15 +17,6 @@ const Extracurricular = ({
       onPress={() => {
         router.push({
           pathname: routerPath,
-          params: {
-            image2: image2,
-            title: title,
-            createdAt: createdAt,
-            time: time,
-            object: object,
-            fields: JSON.stringify(fields), // Serialize fields
-            steps: JSON.stringify(steps), // Serialize steps
-          },
         });
       }}
       style={{
@@ -45,7 +32,7 @@ const Extracurricular = ({
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: 15,
+          gap: 20,
           width: "100%",
         }}
       >
@@ -53,7 +40,7 @@ const Extracurricular = ({
           <Image
             source={image1}
             resizeMode="contain"
-            style={{ width: 70, height: 70 }}
+            style={{ width: 80, height: 80, borderRadius: 8 }}
           />
         </View>
         <View style={{ width: "77%" }}>

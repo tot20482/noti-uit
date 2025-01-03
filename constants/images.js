@@ -9,6 +9,10 @@ import study3 from "./../assets/images/study3.png";
 import research1 from "./../assets/images/research1.png";
 import csacPink from "./../assets/images/csacPink.png";
 import csacBlue from "./../assets/images/csacBlue.png";
+import seminar from "./../assets/images/seminar.jpg";
+import seeyou from "./../assets/images/seeyou.jpg";
+import thefool from "./../assets/images/thefool.jpg";
+import thefool1 from "./../assets/images/thefool1.png";
 
 export default {
   logo,
@@ -22,4 +26,8 @@ export default {
   research1,
   csacBlue,
   csacPink,
+  seminar,
+  seeyou,
+  thefool,
+  thefool1,
 };

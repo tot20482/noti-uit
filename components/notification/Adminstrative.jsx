@@ -1,18 +1,33 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { COLORS, FONT } from "../../constants";
 
-const Adminstrative = ({ title, description, createdAt }) => {
+const Adminstrative = ({
+  title,
+  time,
+  address,
+  desc,
+  link,
+  createdAt,
+  routerPath,
+}) => {
+  const router = useRouter();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => {
+        router.push(routerPath);
+      }}
       style={{
         width: "90%",
         backgroundColor: "#fff",
         flexDirection: "column",
         gap: 4,
         borderRadius: 20,
-        padding: 20,
+        paddingBottom: 20,
+        paddingTop: 20,
+        paddingRight: 15,
+        paddingLeft: 20,
       }}
     >
       <Text
@@ -29,9 +44,38 @@ const Adminstrative = ({ title, description, createdAt }) => {
       >
         {createdAt}
       </Text>
-      <Text style={{ fontSize: 12, fontFamily: FONT.italic }}>
-        {description}
-      </Text>
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{ fontFamily: FONT.semibold, color: "red" }}>
+          <Text style={{ fontFamily: FONT.bold, color: "#000" }}>
+            Thời gian:{" "}
+          </Text>
+          {time}
+        </Text>
+      </View>
+      {address === "" ? (
+        ""
+      ) : (
+        <Text style={{ fontFamily: FONT.regular }}>
+          <Text style={{ fontFamily: FONT.bold }}>Địa chỉ: </Text>
+          {address}
+        </Text>
+      )}
+      {desc === "" ? (
+        ""
+      ) : (
+        <Text>
+          <Text>{desc}: </Text>
+          <Text
+            style={{
+              fontFamily: FONT.medium,
+              color: "#2F6BFF",
+              textDecorationLine: "underline",
+            }}
+          >
+            {link}
+          </Text>
+        </Text>
+      )}
       <Link
         href="#"
         style={{
@@ -44,7 +88,7 @@ const Adminstrative = ({ title, description, createdAt }) => {
       >
         Chi tiết
       </Link>
-    </View>
+    </TouchableOpacity>
   );
 };
 

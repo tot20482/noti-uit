@@ -17,31 +17,55 @@ export const headerTab = [
 
 export const mockAdministrative = [
   {
-    id: "1",
-    title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
-    description:
-      "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
-    createdAt: "T2, 22/07/2024 - 09:45",
+    id: 1,
+    title: `Đăng ký tham gia khảo sát hỗ trợ đề tài "Nghiên cứu, đánh giá tổng thể về bình đẳng giới phục vụ phát triển bền vững"`,
+    time: "11h00, thứ Ba, ngày 24/10/2023",
+    address: "Phòng B1.14, trường Đại học Công nghệ Thông tin",
+    desc: "Sinh viên tham gia khảo sát vui lòng đăng ký theo link",
+    link: "https://link.uit.edu.vn/geCUN",
+    createdAt: "T5, 02/01/2025 - 09:49",
+    routerPath: "(notiDetail)/administrative/survey",
   },
   {
-    id: "2",
-    title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
-    description:
-      "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
-    createdAt: "T2, 22/07/2024 - 09:45",
+    id: 2,
+    title: "Thông báo nộp hồ sơ chế độ chính sách HK1 năm học 2024-2025",
+    time: "đến 16h30 ngày 31/10/2024",
+    address: "Phòng Công tác Sinh viên (Phòng A.101).",
+    desc: "Mọi thắc mắc sinh viên liên hệ qua forum",
+    link: "https://forum.uit.edu.vn/node/563771",
+    createdAt: "T5, 03/10/2024 - 15:19",
+  },
+  {
+    id: 3,
+    title:
+      "Thông báo về việc phát Thẻ sinh viên, Giấy báo nhập học và Quà tặng cho sinh viên khóa 2024",
+    time: "từ ngày 30/08/2024 - 13/09/2024. ( Sáng từ 8h00-11h30, Chiều từ 14h00- 16h30. Thứ 7 , Chủ nhật và ngày lễ không làm việc)",
+    address: "Trước Thư viện (tầng trệt Tòa nhà A).",
+    desc: "",
+    link: "",
+    createdAt: "T6, 30/08/2024 - 11:04",
+  },
+  {
+    id: 4,
+    title: "Thông báo gia hạn học phí HK2 năm học 2024-2025",
+    time: "từ ngày 02/01/2025 đến hết ngày 06/01/2025.",
+    address: "",
+    desc: "Form đăng ký của SV: ",
+    link: " https://student.uit.edu.vn/sinhvien/dkgiahanhp",
+    createdAt: "T5, 02/01/2025 - 14:37",
   },
 ];
 
 export const mockStudy = [
   {
-    id: "1",
+    id: 1,
     title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
     description:
       "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
     createdAt: "T2, 22/07/2024 - 09:45",
   },
   {
-    id: "2",
+    id: 2,
     title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
     description:
       "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
@@ -51,38 +75,40 @@ export const mockStudy = [
 
 export const mockExtracurricular = [
   {
-    id: "1",
+    id: 1,
     title: "Csac casting call 2024: Treat or treat",
     createdAt: "T2, 22/07/2024 - 09:45",
     time: "30/10/2024 - 7/11/2024",
     image1: images.csacPink,
-    image2: images.csacBlue,
     routerPath: "(notiDetail)/extracurricular/csacCastingCall",
+    address: "Phòng B1.2, Trường Đại học Công nghệ Thông tin",
+  },
+  {
+    id: 2,
+    title: "CSAC Acoustic Show: The Fool",
+    createdAt: "T5, 08/05/2024 - 20:00",
+    time: "17h30 - 21h00, thứ Sáu, ngày 10/05/2024",
+    image1: images.thefool,
+    routerPath: "(notiDetail)/extracurricular/theFool",
     address:
-      "Tầng 11, Tòa Taisei Square, 289 Khuất Duy Tiến, Phường Trung Hòa, Cầu Giấy",
-    object: "Sinh viên trên địa bàn TP.HCM",
-    fields: [
-      "Ca hát và rap",
-      "Nhạc cụ",
-      "Truyền thông: Content Creator, Content Writer, Design and Video Editor, Photographer",
-      "Sự kiện - Hậu cần: MC, Tổ chức, Hậu cần, Kỹ thuật",
-    ],
-    steps: [
-      {
-        id: 1,
-        description: "Đọc yêu cầu casting",
-        link: "TẠI ĐÂY",
-      },
-      {
-        id: 2,
-        description: "Điền form đăng ký casting",
-        link: "TẠI ĐÂY",
-      },
-      {
-        id: 3,
-        description:
-          "Chờ email từ CSAC và tham gia buổi casting trực tiếp (Sẽ có thông báo sau)",
-      },
-    ],
+      "Hoàng Gia Coffee - 220 Đường Vành Đai ĐHQG, Bình An, Dĩ An, Bình Dương",
+  },
+  {
+    id: 3,
+    title: "CSAC x C.MC Minishow: See you show",
+    createdAt: "T5, 08/05/2024 - 20:00",
+    time: "18h30 - ngày 17/10/2024",
+    image1: images.seeyou,
+    address:
+      "Sân chào cờ tòa A2 - Trung tâm GDQP Dĩ An, đường Nguyễn Du, Đông Hòa, Dĩ An, Bình Dương",
+  },
+  {
+    id: 4,
+    title:
+      "Seminar: Sinh viên với nghiên cứu khoa học - Tăng cường phát triển ứng dụng với AI",
+    createdAt: "T5, 08/05/2024 - 20:00",
+    time: "9h15 -11h30, ngày 04/12/2024",
+    image1: images.seminar,
+    address: "Hội trường tòa E, tầng 12, Trường Đại học Công nghệ Thông tin.",
   },
 ];

@@ -56,22 +56,30 @@ const CsacContent = ({
           style={{
             backgroundColor: "#fff",
             marginTop: 20,
-            width: "77%",
+            width: "90%",
             borderRadius: 15,
           }}
         >
           <Image
             source={image2}
             resizeMode="contain"
-            style={{ width: "100%" }}
+            style={{ width: "100%", marginTop: 15 }}
           />
-          <View style={{ padding: 20, paddingBottom: 60 }}>
+          <View
+            style={{
+              padding: 20,
+              paddingBottom: 60,
+              width: "90%",
+              marginLeft: 15,
+            }}
+          >
             <Text
               style={{
                 fontFamily: FONT.semibold,
                 fontSize: 16,
                 color: COLORS.primary,
                 textTransform: "uppercase",
+                textAlign: "center",
               }}
             >
               {title}
@@ -82,6 +90,7 @@ const CsacContent = ({
                 fontSize: 12,
                 color: "#6C757D",
                 marginLeft: 4,
+                textAlign: "center",
               }}
             >
               {createdAt}

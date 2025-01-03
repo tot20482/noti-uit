@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import Header from "../../components/notification/Header/Header";
 import {
   mockAdministrative,
@@ -7,6 +7,7 @@ import {
   mockStudy,
 } from "./../../mocks/notification";
 import Extracurricular from "../../components/notification/Extracurricular";
+import Adminstrative from "../../components/notification/Adminstrative";
 
 const Notification = () => {
   const [isSelected, setIsSelected] = useState("Hành chính");
@@ -35,15 +36,7 @@ const Notification = () => {
   return (
     <View>
       <Header isSelected={isSelected} setIsSelected={setIsSelected} />
-      <View
-        style={{
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 15,
-          marginTop: 20,
-        }}
-      >
+      <ScrollView>
         {/* {renderData.map((item) => (
           <NotiContent
             key={item.id}
@@ -52,23 +45,47 @@ const Notification = () => {
             createdAt={item.createdAt}
           />
         ))} */}
-        {isSelected === "Ngoại khóa" &&
-          sourceData.map((item) => (
-            <Extracurricular
-              key={item.id}
-              title={item.title}
-              image1={item.image1}
-              image2={item.image2}
-              address={item.address}
-              time={item.time}
-              createdAt={item.createdAt}
-              routerPath={item.routerPath}
-              object={item.object}
-              fields={item.fields}
-              steps={item.steps}
-            />
-          ))}
-      </View>
+        <View
+          style={{
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 15,
+            marginTop: 20,
+            marginBottom: 200,
+          }}
+        >
+          {isSelected === "Ngoại khóa" &&
+            renderData.map((item) => (
+              <Extracurricular
+                key={item.id}
+                title={item.title}
+                image1={item.image1}
+                image2={item.image2}
+                address={item.address}
+                time={item.time}
+                createdAt={item.createdAt}
+                routerPath={item.routerPath}
+                object={item.object}
+                fields={item.fields}
+                steps={item.steps}
+              />
+            ))}
+          {isSelected === "Hành chính" &&
+            renderData.map((item) => (
+              <Adminstrative
+                key={item.id}
+                title={item.title}
+                time={item.time}
+                address={item.address}
+                desc={item.desc}
+                link={item.link}
+                createdAt={item.createdAt}
+                routerPath={item.routerPath}
+              />
+            ))}
+        </View>
+      </ScrollView>
     </View>
   );
 };
