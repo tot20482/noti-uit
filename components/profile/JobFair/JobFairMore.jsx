@@ -100,8 +100,8 @@ const JobFairMore = ({ isMore, setIsMore, type }) => {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  setIsMore(false);
                   setIsDeleted(true);
+                  setIsMore(false);
                 }}
                 style={{
                   display: "flex",

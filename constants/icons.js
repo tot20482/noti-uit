@@ -30,6 +30,7 @@ import clock from "./../assets/icons/clock.png";
 import download from "./../assets/icons/download.png";
 import add from "./../assets/icons/add.png";
 import moreGray from "./../assets/icons/moreGray.png";
+import location from "./../assets/icons/location.png";
 
 export default {
   eye,
@@ -64,4 +65,5 @@ export default {
   download,
   add,
   moreGray,
+  location,
 };

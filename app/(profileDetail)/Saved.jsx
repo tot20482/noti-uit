@@ -9,7 +9,7 @@ const Saved = () => {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <HeaderTab title="Chi tiết tuyển dụng" type="tin" />
+      <HeaderTab />
     </>
   );
 };

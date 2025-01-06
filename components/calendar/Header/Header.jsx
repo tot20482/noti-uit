@@ -6,13 +6,13 @@ import { COLORS, FONT, icons } from "../../../constants";
 import { CalendarTab } from "../../../mocks/calendar";
 import CalTab from "./CalTab";
 
-const Header = ({ isSelected, setIsSelected }) => {
+const Header = () => {
   const [isFilterVisible, setFilterVisible] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
 
   return (
     <View
-      style={{ height: 170, width: "100%", backgroundColor: COLORS.primary }}
+      style={{ height: 130, width: "100%", backgroundColor: COLORS.primary }}
     >
       <View
         style={{
@@ -52,26 +52,6 @@ const Header = ({ isSelected, setIsSelected }) => {
         >
           <Image source={icons.filter} />
         </TouchableOpacity>
-      </View>
-      <View
-        style={{
-          marginTop: 10,
-          flex: 1,
-          flexDirection: "row",
-          justifyContent: "space-evenly",
-        }}
-      >
-        {CalendarTab.map((item, index) => (
-          <CalTab
-            key={index}
-            type={item.type}
-            title={item.title}
-            isSelected={isSelected}
-            onClick={() => {
-              setIsSelected(item.title);
-            }}
-          />
-        ))}
       </View>
       <Filter
         isFilterVisible={isFilterVisible}

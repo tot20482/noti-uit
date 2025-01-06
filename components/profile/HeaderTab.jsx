@@ -5,9 +5,9 @@ import { mockFullTime } from "../../mocks/job";
 import { MockOutline } from "../../mocks/library/Study";
 import { mockExtracurricular } from "../../mocks/notification";
 import JobContent from "../job/JobContent";
-import StudyResearch from "../library/StudyResearch";
+import StudyResearch2 from "../library/StudyResearch2";
 import Extracurricular from "../notification/Extracurricular";
-import Filter from "./Filter";
+import JobFairMore from "./JobFair/JobFairMore";
 import Search from "./Search";
 import Tab from "./Tab";
 
@@ -27,7 +27,7 @@ const headerTab = [
 ];
 
 const HeaderTab = () => {
-  const [isFilterVisible, setFilterVisible] = useState(false);
+  const [isMore, setIsMore] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
   const [isSelected, setIsSelected] = useState("Thông báo");
   let sourceData = [];
@@ -87,11 +87,11 @@ const HeaderTab = () => {
           )}
           <TouchableOpacity
             onPress={() => {
-              setFilterVisible(true);
+              setIsMore(!isMore);
             }}
             style={{ height: 32, width: 32 }}
           >
-            <Image source={icons.filter} />
+            <Image source={icons.more} />
           </TouchableOpacity>
         </View>
         <View
@@ -114,10 +114,19 @@ const HeaderTab = () => {
             />
           ))}
         </View>
-        <Filter
-          isFilterVisible={isFilterVisible}
-          setFilterVisible={setFilterVisible}
-        />
+        {isSelected === "Thông báo" && (
+          <JobFairMore isMore={isMore} setIsMore={setIsMore} type="Thông báo" />
+        )}
+        {isSelected === "Tin tuyển dụng" && (
+          <JobFairMore
+            isMore={isMore}
+            setIsMore={setIsMore}
+            type="Tin tuyển dụng"
+          />
+        )}
+        {isSelected === "Thư viện" && (
+          <JobFairMore isMore={isMore} setIsMore={setIsMore} type="Sách" />
+        )}
       </View>
       <View
         style={{
@@ -159,7 +168,7 @@ const HeaderTab = () => {
           ))}
         {isSelected === "Thư viện" &&
           renderData.map((item, index) => (
-            <StudyResearch
+            <StudyResearch2
               key={index}
               imgUrl={item.imgUrl}
               title={item.title}

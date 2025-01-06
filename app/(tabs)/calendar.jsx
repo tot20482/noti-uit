@@ -5,35 +5,9 @@ import CalendarContent from "../../components/calendar/CalendarContent";
 import { MockAll } from "@/mocks/calendar";
 
 const Calendar = () => {
-  const [isSelected, setIsSelected] = useState("Tất cả");
-
-  let sourceData = [];
-  switch (isSelected) {
-    case "Tất cả":
-      sourceData = MockAll;
-      break;
-    case "Lịch học":
-      // sourceData = MockResearch;
-      break;
-    case "Deadline":
-      // sourceData = MockResearch;
-      break;
-    case "Khác":
-      // sourceData = MockResearch;
-      break;
-    default:
-      break;
-  }
-
-  useEffect(() => {
-    setRenderData(sourceData);
-  }, [isSelected]);
-
-  const [renderData, setRenderData] = useState(sourceData);
-
   return (
     <View>
-      <Header isSelected={isSelected} setIsSelected={setIsSelected} />
+      <Header />
       <ScrollView style={{ marginBottom: 20 }}>
         <View
           style={{
@@ -45,7 +19,7 @@ const Calendar = () => {
             marginBottom: 30,
           }}
         >
-          {isSelected === "Tất cả" && <CalendarContent sourceData={MockAll} />}
+          <CalendarContent />
         </View>
       </ScrollView>
     </View>

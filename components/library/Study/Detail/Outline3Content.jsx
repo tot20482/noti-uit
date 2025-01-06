@@ -10,7 +10,7 @@ const OutlineContent3 = () => {
     <View>
       <View
         style={{
-          height: 120,
+          height: 130,
           width: "100%",
           backgroundColor: COLORS.primary,
         }}
