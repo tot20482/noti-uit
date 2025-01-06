@@ -107,6 +107,30 @@ const CalendarNoti = ({ title, room, desc, time, status, icon }) => {
               </Text>
             </TouchableOpacity>
           )}
+          {status === "Đã nộp bài" && (
+            <TouchableOpacity
+              style={{
+                backgroundColor: COLORS.primary,
+                padding: 4,
+                width: "50%",
+                marginTop: 8,
+                paddingTop: 8,
+                paddingBottom: 8,
+                borderRadius: 8,
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  textAlign: "center",
+                  fontFamily: FONT.semibold,
+                  fontSize: 14,
+                }}
+              >
+                Xem bài nộp
+              </Text>
+            </TouchableOpacity>
+          )}
         </>
       )}
     </View>
