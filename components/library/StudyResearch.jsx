@@ -10,13 +10,14 @@ const StudyResearch = ({
   Pushlisher,
   publishYear,
   routerPath,
+  itemWidth = "80%", // Cho phép truyền itemWidth từ ngoài vào
 }) => {
   const router = useRouter();
   return (
     <TouchableOpacity
       style={{
         minHeight: 145,
-        width: "100%",
+        width: itemWidth,
         backgroundColor: "#fff",
         padding: 15,
         borderRadius: 15,
@@ -31,7 +32,7 @@ const StudyResearch = ({
           flexDirection: "row",
           alignItems: "flex-start",
           justifyContent: "center",
-          gap: 8,
+          gap: 20,
         }}
       >
         <View style={{ width: "20%" }}>
@@ -41,7 +42,7 @@ const StudyResearch = ({
             style={{ width: 70, height: 70 }}
           />
         </View>
-        <View style={{ width: "75%", display: "flex", gap: 2 }}>
+        <View style={{ width: "77%", display: "flex", gap: 2 }}>
           <Text
             style={{
               fontSize: 16,

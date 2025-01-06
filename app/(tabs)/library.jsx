@@ -34,11 +34,11 @@ const Library = () => {
             padding: 20,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
             alignItems: "center",
+            marginTop: 20,
             gap: 20,
             height: 700,
-            marginBottom: 150,
+            marginBottom: 180,
           }}
         >
           {renderData.map((item) => (

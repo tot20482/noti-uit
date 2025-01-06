@@ -1,29 +1,28 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { COLORS, FONT } from "../../constants";
 import { Link, useRouter } from "expo-router";
-import { COLORS, FONT } from "../../../constants";
 
-const OutlineContent = ({
+const Research = ({
   imgUrl,
   title,
-  topic,
-  subject,
+  Keywords,
+  Pushlisher,
   publishYear,
   routerPath,
-  itemWidth = "80%", // Cho phép truyền itemWidth từ ngoài vào
 }) => {
   const router = useRouter();
   return (
     <TouchableOpacity
-      onPress={() => {
-        router.push(routerPath);
-      }}
       style={{
-        minHeight: 115,
-        width: itemWidth, // Sử dụng itemWidth động thay vì cố định
+        minHeight: 145,
+        width: "90%",
         backgroundColor: "#fff",
         padding: 15,
         borderRadius: 15,
+      }}
+      onPress={() => {
+        router.push(routerPath);
       }}
     >
       <View
@@ -42,7 +41,7 @@ const OutlineContent = ({
             style={{ width: 70, height: 70 }}
           />
         </View>
-        <View style={{ width: "75%", display: "flex", gap: 2 }}>
+        <View style={{ width: "77%", display: "flex", gap: 2 }}>
           <Text
             style={{
               fontSize: 16,
@@ -53,12 +52,12 @@ const OutlineContent = ({
             {title}
           </Text>
           <Text style={{ fontSize: 14 }}>
-            <Text style={{ fontFamily: FONT.bold }}>Chủ đề: </Text>
-            {topic}
+            <Text style={{ fontFamily: FONT.bold }}>Keywords: </Text>
+            {Keywords}
           </Text>
           <Text style={{ fontSize: 14 }}>
-            <Text style={{ fontFamily: FONT.bold }}>Mã môn: </Text>
-            {subject}
+            <Text style={{ fontFamily: FONT.bold }}>Pushlisher: </Text>
+            {Pushlisher}
           </Text>
           <Text style={{ fontSize: 14 }}>
             <Text style={{ fontFamily: FONT.bold }}>Năm xuất bản: </Text>
@@ -81,4 +80,4 @@ const OutlineContent = ({
   );
 };
 
-export default OutlineContent;
+export default Research;

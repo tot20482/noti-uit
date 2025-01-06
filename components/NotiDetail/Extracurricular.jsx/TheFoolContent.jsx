@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { COLORS, FONT, icons, images } from "../../../constants";
 import { useRouter } from "expo-router";
+import Button from "../Button";
 
 const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
   const router = useRouter();
@@ -42,6 +43,7 @@ const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          minHeight: 800,
         }}
       >
         <ScrollView
@@ -50,7 +52,7 @@ const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
             marginTop: 20,
             width: "90%",
             borderRadius: 15,
-            height: 750,
+            height: 730,
             marginBottom: 50,
           }}
         >
@@ -160,6 +162,18 @@ const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
                   </View>
                 </View>
               ))}
+            </View>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                width: "95%",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: 30,
+              }}
+            >
+              <Button />
             </View>
           </View>
         </ScrollView>

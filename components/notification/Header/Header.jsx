@@ -4,9 +4,11 @@ import Tab from "./Tab";
 import { headerTab } from "../../../mocks/notification";
 import Filter from "./Filter";
 import { useState } from "react";
-import Search from "./Search";
+import Search from "./SearchNoti";
+import { useRouter } from "expo-router";
 
 const Header = ({ isSelected, setIsSelected }) => {
+  const router = useRouter();
   const [isFilterVisible, setFilterVisible] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
 
@@ -25,25 +27,17 @@ const Header = ({ isSelected, setIsSelected }) => {
           paddingRight: 20,
         }}
       >
-        {isSearched ? (
-          <Search isSearched={isSearched} setIsSearched={setIsSearched} />
-        ) : (
-          <>
-            <TouchableOpacity
-              style={{ width: 32, height: 32 }}
-              onPress={() => {
-                setIsSearched(!isSearched);
-              }}
-            >
-              <Image source={icons.search} />
-            </TouchableOpacity>
-            <Text
-              style={{ fontSize: 24, fontFamily: FONT.bold, color: "#fff" }}
-            >
-              Thông báo
-            </Text>
-          </>
-        )}
+        <TouchableOpacity
+          style={{ width: 32, height: 32 }}
+          onPress={() => {
+            router.push("/(notiDetail)/search");
+          }}
+        >
+          <Image source={icons.search} />
+        </TouchableOpacity>
+        <Text style={{ fontSize: 24, fontFamily: FONT.bold, color: "#fff" }}>
+          Thông báo
+        </Text>
         <TouchableOpacity
           onPress={() => {
             setFilterVisible(true);

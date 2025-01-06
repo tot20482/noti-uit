@@ -7,6 +7,11 @@ import study1 from "./../assets/images/study1.png";
 import study2 from "./../assets/images/study2.png";
 import study3 from "./../assets/images/study3.png";
 import research1 from "./../assets/images/research1.png";
+import research2 from "./../assets/images/research2.png";
+import research3 from "./../assets/images/research3.png";
+import research4 from "./../assets/images/research4.png";
+import research5 from "./../assets/images/research5.png";
+import research6 from "./../assets/images/research6.png";
 import csacPink from "./../assets/images/csacPink.png";
 import csacBlue from "./../assets/images/csacBlue.png";
 import seminar from "./../assets/images/seminar.jpg";
@@ -26,6 +31,11 @@ export default {
   study2,
   study3,
   research1,
+  research2,
+  research3,
+  research4,
+  research5,
+  research6,
   csacBlue,
   csacPink,
   seminar,

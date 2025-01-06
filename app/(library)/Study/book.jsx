@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import Header from "../../../components/library/Header/StudyResearch/Header";
 import { MockBook } from "../../../mocks/library/Study";
 import StudyResearch from "../../../components/library/StudyResearch";
+import OutlineContent2 from "../../../components/library/Study/OutlineContent2";
 
 const Book = () => {
   return (
@@ -20,7 +21,7 @@ const Book = () => {
         }}
       >
         {MockBook.map((item) => (
-          <StudyResearch
+          <OutlineContent2
             key={item.id}
             imgUrl={item.imgUrl}
             title={item.title}

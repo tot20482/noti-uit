@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
-import React from "react";
 import { Stack } from "expo-router";
+import React from "react";
+import { View } from "react-native";
 import Header from "../../../components/library/Header/StudyResearch/Header";
+import StudyResearch2 from "../../../components/library/StudyResearch2";
 import { MockOutline } from "../../../mocks/library/Study";
-import OutlineContent from "../../../components/library/Study/OutlineContent";
+import OutlineContent2 from "../../../components/library/Study/OutlineContent2";
 
 const Outline = () => {
   return (
@@ -20,7 +21,7 @@ const Outline = () => {
         }}
       >
         {MockOutline.map((item) => (
-          <OutlineContent
+          <OutlineContent2
             key={item.id}
             imgUrl={item.imgUrl}
             title={item.title}

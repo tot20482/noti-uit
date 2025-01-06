@@ -59,17 +59,33 @@ export const mockAdministrative = [
 export const mockStudy = [
   {
     id: 1,
-    title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
-    description:
-      "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
+    title: "Lịch học HT2 Nhập môn thị giác máy tính",
+    classId: "CS231.P11.1",
+    room: "B1.18",
+    time: "Tiết 123, Thứ 2 - 30/12/2024",
+    description: "Thực hành về các đặc trưng cạnh",
     createdAt: "T2, 22/07/2024 - 09:45",
+    routerPath: "(notiDetail)/study/study",
   },
   {
     id: 2,
-    title: "Đăng ký đề tài đồ án 1 và đồ án 2 học kỳ 1 năm học 2024 - 2025",
-    description:
-      "Khoa Công nghệ Phần mềm thông báo các sinh viên đăng ký học phần thực tập doanh nghiệp học kỳ 1 năm học 2024 - 2025 lớp SE501.P11 và SE501.P11.PMCL cập nhật thông tin thực tập doanh nghiệp vào các file sau...",
+    title: "Lịch học HT2 Tư duy tính toán",
+    classId: "CS117.P11.1",
+    room: "B2.08",
+    time: "Tiết 678910, Thứ 2 - 30/12/2024",
+    description: "Group Assignment",
     createdAt: "T2, 22/07/2024 - 09:45",
+    routerPath: "(notiDetail)/study/study",
+  },
+  {
+    id: 3,
+    title: "Lịch học bù Xử lý ngôn ngữ tự nhiên",
+    classId: "CS221.P11",
+    room: "B3.10",
+    time: "Tiết 678910, Thứ 77 - 7/12/2024",
+    description: "Báo cáo đồ án",
+    createdAt: "T2, 22/07/2024 - 09:45",
+    routerPath: "(notiDetail)/study/study",
   },
 ];
 

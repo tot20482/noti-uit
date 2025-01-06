@@ -4,6 +4,8 @@ import Header from "../../../components/library/Header/StudyResearch/Header";
 import { MockDocument } from "../../../mocks/library/Study";
 import StudyResearch from "../../../components/library/StudyResearch";
 import { View } from "react-native";
+import OutlineContent2 from "../../../components/library/Study/OutlineContent2";
+import StudyResearch2 from "../../../components/library/StudyResearch2";
 
 const Document = () => {
   return (
@@ -22,7 +24,7 @@ const Document = () => {
         }}
       >
         {MockDocument.map((item) => (
-          <StudyResearch
+          <StudyResearch2
             key={item.id}
             imgUrl={item.imgUrl}
             title={item.title}

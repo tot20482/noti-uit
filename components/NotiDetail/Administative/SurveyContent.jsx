@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { COLORS, FONT, icons, images } from "../../../constants";
 import { useRouter } from "expo-router";
+import Button from "../Button";
 
 const SurveyContent = ({ title, createdAt, detail, note, contact }) => {
   const router = useRouter();
@@ -51,7 +52,6 @@ const SurveyContent = ({ title, createdAt, detail, note, contact }) => {
             width: "90%",
             borderRadius: 15,
             minHeight: 400,
-            marginBottom: 50,
           }}
         >
           <View
@@ -146,6 +146,18 @@ const SurveyContent = ({ title, createdAt, detail, note, contact }) => {
             </View>
           </View>
         </ScrollView>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "85%",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 20,
+          }}
+        >
+          <Button />
+        </View>
       </View>
     </>
   );

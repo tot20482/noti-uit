@@ -3,14 +3,13 @@ import React from "react";
 import { Link, useRouter } from "expo-router";
 import { COLORS, FONT } from "../../../constants";
 
-const OutlineContent = ({
+const OutlineContent2 = ({
   imgUrl,
   title,
   topic,
   subject,
   publishYear,
   routerPath,
-  itemWidth = "80%", // Cho phép truyền itemWidth từ ngoài vào
 }) => {
   const router = useRouter();
   return (
@@ -20,7 +19,7 @@ const OutlineContent = ({
       }}
       style={{
         minHeight: 115,
-        width: itemWidth, // Sử dụng itemWidth động thay vì cố định
+        width: "90%",
         backgroundColor: "#fff",
         padding: 15,
         borderRadius: 15,
@@ -81,4 +80,4 @@ const OutlineContent = ({
   );
 };
 
-export default OutlineContent;
+export default OutlineContent2;

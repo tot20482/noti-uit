@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, FONT, icons } from "../../../constants";
 import { useRouter } from "expo-router";
+import Button from "../Button";
 
 const CsacContent = ({
   image2,
@@ -152,6 +153,18 @@ const CsacContent = ({
               ))}
             </View>
           </View>
+        </View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            width: "85%",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 20,
+          }}
+        >
+          <Button />
         </View>
       </View>
     </>
