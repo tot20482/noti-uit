@@ -3,6 +3,7 @@ import React from "react";
 import { COLORS, FONT, icons, images } from "../../../constants";
 import { useRouter } from "expo-router";
 import Button from "../Button";
+import ButtonFavorited from "../ButtonFavorited";
 
 const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
   const router = useRouter();
@@ -173,7 +174,7 @@ const TheFoolContent = ({ title, createdAt, detail, note, contact }) => {
                 marginTop: 30,
               }}
             >
-              <Button />
+              <ButtonFavorited />
             </View>
           </View>
         </ScrollView>

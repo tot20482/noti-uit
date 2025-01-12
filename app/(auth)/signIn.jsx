@@ -2,7 +2,14 @@ import { getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 import { Link, Stack, useRouter } from "expo-router";
 import { initializeApp } from "firebase/app";
 import React, { useState } from "react";
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  Keyboard,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { COLORS, FONT, icons } from "../../constants";
 
 const firebaseConfig = {
@@ -27,6 +34,7 @@ const SignIn = () => {
   const router = useRouter();
 
   const handleLogin = async () => {
+    Keyboard.dismiss();
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
       setUser(res.user);
@@ -53,6 +61,7 @@ const SignIn = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          paddingTop: 20,
         }}
       >
         <Text
@@ -65,7 +74,7 @@ const SignIn = () => {
         >
           Noti uit
         </Text>
-        <Text style={{ fontSize: 18, fontFamily: FONT.medium, color: "#fff" }}>
+        <Text style={{ fontSize: 16, fontFamily: FONT.medium, color: "#fff" }}>
           Đơn giản - Hiệu quả - Gọn gàng
         </Text>
       </View>
@@ -95,7 +104,12 @@ const SignIn = () => {
               padding: 12,
             }}
           >
-            <Image source={icons.person} style={{ width: 24, height: 24 }} />
+            <Image
+              source={icons.name}
+              style={{ width: 24, height: 24 }}
+              resizeMode="contain"
+              tintColor="#000"
+            />
             <TextInput
               placeholder="Nhập email"
               value={email}

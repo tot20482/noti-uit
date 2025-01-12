@@ -1,61 +1,84 @@
-import { COLORS } from "@/constants";
-import {
-  MockFirstDay,
-  MockFourthDay,
-  MockSecondDay,
-  MockThirdDay,
-} from "@/mocks/calendar";
 import React, { useState } from "react";
 import { ScrollView, View } from "react-native";
-import DatePicker, { getFormatedDate } from "react-native-modern-datepicker";
+import { Calendar } from "react-native-calendars";
+import { COLORS } from "@/constants";
 import CalendarNoti from "./CalendarNoti";
+import {
+  MockFirstDay,
+  MockSecondDay,
+  MockThirdDay,
+  MockFourthDay,
+} from "@/mocks/calendar";
 
 const CalendarContent = () => {
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState("2025-01-11");
 
-  const today = getFormatedDate(new Date(), "YYYY/MM/DD");
+  // Danh sách các ngày cần đánh dấu
+  const markedDates = {
+    "2025-01-11": { marked: true, dotColor: COLORS.primary },
+    "2025-01-12": { marked: true, dotColor: COLORS.primary },
+    "2025-01-13": { marked: true, dotColor: COLORS.primary },
+    "2025-01-19": { marked: true, dotColor: COLORS.primary },
+  };
 
-  const handleChangeDate = (date) => {
-    setSelectedDate(date);
+  // Thêm ngày đã chọn với style
+  const selectedStyle = {
+    [selectedDate]: {
+      selected: true,
+      selectedColor: COLORS.primary,
+      selectedTextColor: "#ffffff",
+    },
+  };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date.dateString);
   };
 
   return (
     <>
       <View
         style={{
-          width: "90%", // Đặt chiều rộng cụ thể cho lịch
-          padding: 6, // Padding tổng quát của lịch
+          width: "90%",
+          padding: 6,
           backgroundColor: "#ffffff",
           borderRadius: 10,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: 2 },
           shadowOpacity: 0.2,
           shadowRadius: 4,
+          marginBottom: 20,
         }}
       >
-        <DatePicker
-          mode="calendar"
-          minimumDate={today}
-          selected={selectedDate || today}
-          onDateChange={handleChangeDate}
-          options={{
-            backgroundColor: "#ffffff",
-            textHeaderColor: COLORS.primary,
-            textDefaultColor: "#333",
-            selectedTextColor: "#ffffff",
-            mainColor: COLORS.primary, // Màu chính cho ngày được chọn
-            textSecondaryColor: "#b6b6b6",
-            // borderColor: "rgba(0, 0, 0, 0.1)",
-            textFontSize: 12,
-            headerFontSize: 12,
-            textFontWeight: "500",
-            borderRadius: 8, // Bo góc cho lịch
-            // dayPaddingVertical: 2, // Điều chỉnh padding dọc giữa các ngày
-            dayWidth: 8, // Đặt chiều rộng cho mỗi ô ngày
-            dayHeight: 8, // Đặt chiều cao cho mỗi ô ngày
-            // dayPaddingHorizontal: 2, // Padding giữa các ngày
-            boderWidth: 0,
+        <Calendar
+          onDayPress={handleDateChange}
+          markedDates={{ ...markedDates, ...selectedStyle }}
+          theme={{
+            todayTextColor: "#000",
+            selectedDayBackgroundColor: COLORS.primary,
+            selectedDayTextColor: "#ffffff",
+            dotColor: COLORS.primary,
+            arrowColor: COLORS.primary,
+            textDayFontWeight: "bold",
+            textMonthFontWeight: "bold",
+            monthTextColor: COLORS.primary,
           }}
+          // Custom tiếng Việt
+          monthNames={[
+            "Tháng 1",
+            "Tháng 2",
+            "Tháng 3",
+            "Tháng 4",
+            "Tháng 5",
+            "Tháng 6",
+            "Tháng 7",
+            "Tháng 8",
+            "Tháng 9",
+            "Tháng 10",
+            "Tháng 11",
+            "Tháng 12",
+          ]}
+          dayNames={["CN", "T2", "T3", "T4", "T5", "T6", "T7"]}
+          firstDay={1} // Bắt đầu từ thứ 2
         />
       </View>
       <ScrollView
@@ -77,7 +100,7 @@ const CalendarContent = () => {
             gap: 15,
           }}
         >
-          {(selectedDate === today) === "2025/01/11" &&
+          {selectedDate === "2025-01-11" &&
             MockFirstDay.map((item) => (
               <CalendarNoti
                 key={item.id}
@@ -89,7 +112,7 @@ const CalendarContent = () => {
                 icon={item.icon}
               />
             ))}
-          {selectedDate === "2025/01/12" &&
+          {selectedDate === "2025-01-12" &&
             MockSecondDay.map((item) => (
               <CalendarNoti
                 key={item.id}
@@ -101,7 +124,7 @@ const CalendarContent = () => {
                 icon={item.icon}
               />
             ))}
-          {selectedDate === "2025/01/13" &&
+          {selectedDate === "2025-01-13" &&
             MockThirdDay.map((item) => (
               <CalendarNoti
                 key={item.id}
@@ -113,7 +136,7 @@ const CalendarContent = () => {
                 icon={item.icon}
               />
             ))}
-          {selectedDate === "2025/01/19" &&
+          {selectedDate === "2025-01-19" &&
             MockFourthDay.map((item) => (
               <CalendarNoti
                 key={item.id}

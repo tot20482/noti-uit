@@ -1,8 +1,9 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { COLORS, FONT, icons } from "../../../constants";
 
 const Button = () => {
+  const [isHeart, setIsHeart] = useState(false);
   return (
     <>
       <TouchableOpacity
@@ -19,12 +20,23 @@ const Button = () => {
           backgroundColor: "#fff",
           gap: 8,
         }}
+        onPress={() => {
+          setIsHeart(!isHeart);
+        }}
       >
-        <Image
-          source={icons.heart}
-          resizeMode="contain"
-          style={{ width: 24, height: 24 }}
-        />
+        {isHeart ? (
+          <Image
+            source={icons.hearted}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        ) : (
+          <Image
+            source={icons.heart}
+            resizeMode="contain"
+            style={{ width: 24, height: 24 }}
+          />
+        )}
         <Text
           style={{
             fontSize: 16,

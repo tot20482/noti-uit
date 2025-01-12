@@ -12,6 +12,7 @@ import right from "./../assets/icons/right.png";
 import left from "./../assets/icons/left.png";
 import fly from "./../assets/icons/fly.png";
 import heart from "./../assets/icons/heart.png";
+import hearted from "./../assets/icons/hearted.png";
 import mssv from "./../assets/icons/mssv.png";
 import khoa from "./../assets/icons/khoa.png";
 import lopsh from "./../assets/icons/lopsh.png";
@@ -66,4 +67,5 @@ export default {
   add,
   moreGray,
   location,
+  hearted,
 };

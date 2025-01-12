@@ -30,7 +30,7 @@ export default function Index() {
       </Text>
       <Text
         style={{
-          fontSize: 20,
+          fontSize: 18,
           fontFamily: FONT.medium,
           color: "#fff",
           marginBottom: 10,

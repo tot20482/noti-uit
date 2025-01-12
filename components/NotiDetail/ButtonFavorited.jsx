@@ -2,8 +2,8 @@ import { View, Text, TouchableOpacity, Image, Modal } from "react-native";
 import React, { useState } from "react";
 import { COLORS, FONT, icons } from "../../constants";
 
-const Button = () => {
-  const [isHeart, setIsHeart] = useState(false);
+const ButtonFavorited = () => {
+  const [isHeart, setIsHeart] = useState(true);
   const [isAdded, setIsAdded] = useState(false);
 
   return (
@@ -127,4 +127,4 @@ const Button = () => {
   );
 };
 
-export default Button;
+export default ButtonFavorited;

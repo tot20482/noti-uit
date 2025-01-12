@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONT, icons } from "../../constants";
@@ -8,8 +9,8 @@ import JobContent from "../job/JobContent";
 import StudyResearch2 from "../library/StudyResearch2";
 import Extracurricular from "../notification/Extracurricular";
 import JobFairMore from "./JobFair/JobFairMore";
-import Search from "./Search";
 import Tab from "./Tab";
+import OutlineContent2 from "../library/Study/OutlineContent2";
 
 const headerTab = [
   {
@@ -27,8 +28,8 @@ const headerTab = [
 ];
 
 const HeaderTab = () => {
+  const router = useRouter();
   const [isMore, setIsMore] = useState(false);
-  const [isSearched, setIsSearched] = useState(false);
   const [isSelected, setIsSelected] = useState("Thông báo");
   let sourceData = [];
   switch (isSelected) {
@@ -66,25 +67,22 @@ const HeaderTab = () => {
             paddingRight: 20,
           }}
         >
-          {isSearched ? (
-            <Search isSearched={isSearched} setIsSearched={setIsSearched} />
-          ) : (
-            <>
-              <TouchableOpacity
-                style={{ width: 32, height: 32 }}
-                onPress={() => {
-                  setIsSearched(!isSearched);
-                }}
-              >
-                <Image source={icons.search} />
-              </TouchableOpacity>
-              <Text
-                style={{ fontSize: 24, fontFamily: FONT.bold, color: "#fff" }}
-              >
-                Đã lưu
-              </Text>
-            </>
-          )}
+          <>
+            <TouchableOpacity
+              style={{ width: 32, height: 32 }}
+              onPress={() => {
+                router.back();
+              }}
+            >
+              <Image source={icons.left} />
+            </TouchableOpacity>
+            <Text
+              style={{ fontSize: 24, fontFamily: FONT.bold, color: "#fff" }}
+            >
+              Đã lưu
+            </Text>
+          </>
+
           <TouchableOpacity
             onPress={() => {
               setIsMore(!isMore);
@@ -168,12 +166,12 @@ const HeaderTab = () => {
           ))}
         {isSelected === "Thư viện" &&
           renderData.map((item, index) => (
-            <StudyResearch2
-              key={index}
+            <OutlineContent2
+              key={item.id}
               imgUrl={item.imgUrl}
               title={item.title}
-              Keywords={item.Keywords}
-              Pushlisher={item.Pushlisher}
+              topic={item.topic}
+              subject={item.subject}
               publishYear={item.publishYear}
               routerPath={item.routerPath}
             />

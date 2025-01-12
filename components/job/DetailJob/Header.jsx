@@ -13,6 +13,7 @@ import Need from "./TabDetail/Need";
 import Benefit from "./TabDetail/Benefit";
 import Button from "./Button";
 import { useRouter } from "expo-router";
+import ButtonFavorited from "../../NotiDetail/ButtonFavorited";
 const Header = () => {
   const router = useRouter();
   const [isSelected, setIsSelected] = useState("Thông tin chung");
@@ -120,7 +121,7 @@ const Header = () => {
             marginTop: 20,
           }}
         >
-          <Button />
+          <ButtonFavorited />
         </View>
       </View>
     </>

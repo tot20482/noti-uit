@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { COLORS, FONT, icons } from "../../../constants";
 import { useRouter } from "expo-router";
-import Button from "../Button";
+import ButtonFavorited from "../ButtonFavorited";
 
 const CsacContent = ({
   image2,
@@ -164,7 +164,7 @@ const CsacContent = ({
             marginTop: 20,
           }}
         >
-          <Button />
+          <ButtonFavorited />
         </View>
       </View>
     </>

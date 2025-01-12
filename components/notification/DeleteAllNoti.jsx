@@ -33,14 +33,6 @@ const DeleteAllNoti = ({ setIsDeleted }) => {
         >
           Xóa tất cả thông báo?
         </Text>
-        <Text
-          style={{
-            fontSize: 14,
-            fontFamily: FONT.regular,
-          }}
-        >
-          Thông báo bị xóa sẽ không thể khôi phục
-        </Text>
         <View
           style={{
             display: "flex",
