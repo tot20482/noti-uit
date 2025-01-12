@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { COLORS, FONT, icons } from "../../../constants";
 
 const Button = () => {
-  const [isHeart, setIsHeart] = useState(false);
+  const [isHeart, setIsHeart] = useState(true);
   return (
     <>
       <TouchableOpacity

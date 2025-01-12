@@ -11,13 +11,13 @@ import {
 } from "@/mocks/calendar";
 
 const CalendarContent = () => {
-  const [selectedDate, setSelectedDate] = useState("2025-01-11");
+  const [selectedDate, setSelectedDate] = useState("2025-01-12");
 
   // Danh sách các ngày cần đánh dấu
   const markedDates = {
-    "2025-01-11": { marked: true, dotColor: COLORS.primary },
     "2025-01-12": { marked: true, dotColor: COLORS.primary },
     "2025-01-13": { marked: true, dotColor: COLORS.primary },
+    "2025-01-14": { marked: true, dotColor: COLORS.primary },
     "2025-01-19": { marked: true, dotColor: COLORS.primary },
   };
 
@@ -100,7 +100,7 @@ const CalendarContent = () => {
             gap: 15,
           }}
         >
-          {selectedDate === "2025-01-11" &&
+          {selectedDate === "2025-01-12" &&
             MockFirstDay.map((item) => (
               <CalendarNoti
                 key={item.id}
@@ -112,7 +112,7 @@ const CalendarContent = () => {
                 icon={item.icon}
               />
             ))}
-          {selectedDate === "2025-01-12" &&
+          {selectedDate === "2025-01-13" &&
             MockSecondDay.map((item) => (
               <CalendarNoti
                 key={item.id}
@@ -124,7 +124,7 @@ const CalendarContent = () => {
                 icon={item.icon}
               />
             ))}
-          {selectedDate === "2025-01-13" &&
+          {selectedDate === "2025-01-14" &&
             MockThirdDay.map((item) => (
               <CalendarNoti
                 key={item.id}

@@ -121,7 +121,7 @@ const Header = () => {
             marginTop: 20,
           }}
         >
-          <ButtonFavorited />
+          <Button />
         </View>
       </View>
     </>
